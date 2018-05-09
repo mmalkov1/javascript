@@ -1,0 +1,40 @@
+.firsttask__link {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+.main__header {
+	text-align: center;
+}
+.main__link {
+	display: block;
+	margin: 0 auto 15px;
+}
+a {
+	text-align: center;
+	font-size: 30px;
+	text-decoration: none;
+	padding: 10px;
+	border: 1px solid blue;
+	color: blue;
+	transition: all 0.3s;
+}
+a:hover {
+	background-color: blue;
+	color: white;
+}
+
+.main {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.main__nav {
+	list-style: none;
+	padding: 0;
+} 
