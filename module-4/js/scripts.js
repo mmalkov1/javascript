@@ -24,24 +24,24 @@ function Cashier (name, products) {
   let customerMoney = 0;
   let changeAmount = 0;
   this.countTotalPrice = function(order) {
-  	for (product in order) {
-  		totalPrice = totalPrice + products[product]*order[product];
-  	}
-  	console.log(totalPrice);
+    for (product in order) {
+      totalPrice = totalPrice + products[product]*order[product];
+    }
+    console.log(totalPrice);
   };
 
   this.getCustomerMoney = function () {
-  	if (customerMoney < totalPrice) {
+    if (customerMoney < totalPrice) {
       customerMoney = +prompt(`Сумма ваших покупок: ${totalPrice}, введите сумму денег:`);
       if(customerMoney === null) {
         return null;
       }
     };				
-	};
-	this.countChange = function () {
+  };
+  this.countChange = function () {
     return customerMoney - totalPrice;
-	};
-	this.reset = function () {
+  };
+  this.reset = function () {
     totalPrice = 0;
     customerMoney = 0;
     changeAmount = 0;
