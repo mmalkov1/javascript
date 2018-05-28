@@ -30,11 +30,11 @@ function Cashier (name, products) {
   	console.log(totalPrice);
   };
 
-	this.getCustomerMoney = function () {
-   	if (customerMoney < totalPrice) {
+  this.getCustomerMoney = function () {
+  	if (customerMoney < totalPrice) {
       customerMoney = +prompt(`Сумма ваших покупок: ${totalPrice}, введите сумму денег:`);
       if(customerMoney === null) {
-          return null;
+        return null;
       }
     };				
 	};
@@ -42,23 +42,22 @@ function Cashier (name, products) {
     return customerMoney - totalPrice;
 	};
 	this.reset = function () {
-      totalPrice = 0;
-      customerMoney = 0;
-      changeAmount = 0;
+    totalPrice = 0;
+    customerMoney = 0;
+    changeAmount = 0;
   };
   this.serve = function (order) {
-      this.countTotalPrice(order);
-      this.getCustomerMoney();
-      this.countChange();
-      if (customerMoney >= totalPrice) {
-          console.log(`Спасибо за покупку, ваша сдача: ${this.countChange()}`);
-      } else {
-          console.log(`Очень жаль, что-то пошло не так, приходите еще`);
-      }
-      this.reset();
+    this.countTotalPrice(order);
+    this.getCustomerMoney();
+    this.countChange();
+    if (customerMoney >= totalPrice) {
+      console.log(`Спасибо за покупку, ваша сдача: ${this.countChange()}`);
+    } else {
+      console.log(`Очень жаль, что-то пошло не так, приходите еще`);
+    }
+    this.reset();
   }
 }
-
 
 let a = new Cashier ('Test', products);
 console.log(a.serve(order));
