@@ -3,8 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<title>module-5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<main class="container">
+		<h1>Работа с объектами</h1>
+		<div class="find-login  row col-12">
+			<h3 class="alert-heading col-12">Поиск пользователя по логину</h3>
+			<div class="find-login__form row col-12">
+				<input type="text" id="find_id" class="form-control col-4" placeholder="Введите логин для поиска">
+				<button onclick="a.getUserByLogin(searchLogin.value)" class="btn btn-outline-success col-2">Найти по логину</button>
+			</div>		
+		</div>
+		<div class="id-status row col-12">
+			<h3 class="id-status__header col-12">Определение статуса по id</h3>
+			<div class="id-status__form col-12 row">
+				<input type="text" id="id" class="col-4 form-control" placeholder="Введите id для поиска">
+				<button onclick="a.getUserStatus(searchStatus.value)" class="btn btn-outline-success col-2">Определить статус</button>
+			</div>
+		</div>
+		<div class="add-user row col-12">
+			<h3 class="add-user__header col-12">Добавление пользователя</h3>
+			<div class="add-user__form row col-12">
+				<input type="text" id="login" class="form-control col-2" placeholder="Введите логин">
+				<input type="password" id="password" class="form-control col-2" placeholder="Введите пароль">
+				<button onclick="a.addUser({login: loginInput.value, password: passwordInput.value})" class="btn btn-outline-success col-2">Добавить</button>
+			</div>		
+		</div>
+		<div id="user_info" class="alert alert-success">Строка результатов</div>
+	</main>
+	
+	
 	<script src="js/scripts.js"></script>
 </body>
 </html>

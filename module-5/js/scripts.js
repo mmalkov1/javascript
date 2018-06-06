@@ -19,8 +19,10 @@ const initialPosts = {
     { id: "-i03pbhy3s", text: "post #2", likes: 45 }
   ],
 };
-
-const testUser = {login: 'Serg', password: '123456'};
+let loginInput = document.getElementById('login'); 
+let passwordInput = document.getElementById('password');
+let searchLogin = document.getElementById('find_id');
+let searchStatus = document.getElementById('id');
 
 const getId = () => "-" + Math.random().toString(36).substr(2, 9);
 
@@ -28,19 +30,53 @@ function SocialBook (users = [], posts = {}) {
 	this.getAllUsers = users;
 	this.getUserByLogin = function (login) {
 		const resultLogin = users.find(user => user.login === login);
-		return resultLogin;
+		let element = document.getElementById('user_info');
+		element.innerHTML = null;
+
+		if (resultLogin) {
+			element.innerHTML += 'Результат поиска по логину: <br>';
+			for (item in resultLogin) {
+				element.innerHTML += `  ${item} : ${resultLogin[item]} <br>`;	
+			}		
+			return resultLogin;
+		} else {
+			element.innerHTML = 'Пользователь с таким логином не найден!';
+		}		
 	}
 	this.getUserStatus = function (userId) {
 		let res = '';
+		let element = document.getElementById('user_info');
 		const resultId = users.find(user => user.id === userId);
-		resultId.isActive === true ? res = 'active' : res = 'inactive';
+		if (resultId) {			
+			resultId.isActive === true ? res = 'active' : res = 'inactive';
+			element.innerHTML = `Статус пользователя ${res}`;
+		} else {
+			element.innerHTML = `Пользователь с id ${userId} не найден`;
+		}
+		
+		
 		return res;
 	}
 	this.addUser = function (user = {}) {
-		user.id = getId();
-		user.isActive = false;
-		users.push(user);
-		return users;
+		let element = document.getElementById('user_info');
+		if (loginInput.value && passwordInput) {
+			user.id = getId();
+			user.isActive = false;
+			users.push(user);		
+			element.innerHTML = null;
+			for (el of users) {
+
+				element.innerHTML += `user <br>`;
+				for (item in el) {
+					element.innerHTML += `  ${item} : ${el[item]} <br>`;
+				}
+				element.innerHTML += `<br>`			
+			}
+			return users;
+		} else {
+			element.innerHTML = `Пустое поле! Повторите ввод имени и/или пароля`;
+		}
+				
 	}
 	this.removeUserById = function (userId) {
 		const filterUsers = users.filter(user => user.id !== userId);
