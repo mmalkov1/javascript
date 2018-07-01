@@ -1,0 +1,28 @@
+ul {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1280px;
+  overflow-x: auto;
+}
+
+li {
+  display: inline;
+  list-style-type: none;
+}
+
+li > img {
+  display: block;
+  height: 200px;
+  filter: grayscale(100%);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+li > img:hover {
+  filter: grayscale(0);
+  transition: all .2s;
+}
+
+.active {
+  filter: grayscale(0);
+}
