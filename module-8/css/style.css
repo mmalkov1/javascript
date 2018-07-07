@@ -1,8 +1,16 @@
+.fullview img {
+  height: 600px;
+  width: auto;
+  display: block;
+  margin: auto;
+
+}
+
 ul {
   display: flex;
   justify-content: flex-start;
   max-width: 1280px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 li {
@@ -25,4 +33,83 @@ li > img:hover {
 
 .active {
   filter: grayscale(0);
+}
+
+.preview-container {
+  position: relative;
+}
+
+.nav-left,
+.nav-right {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background-color: #80808057;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.nav-left:hover,
+.nav-right:hover {
+  background-color: #8080809c;
+  transition: background-color .2s;
+}
+.nav-left:before {
+  content: '';
+}
+
+.nav-right:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(45deg);
+  width: 20px;
+  height: 3px;
+  background-color: black;
+}
+
+.nav-right:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -40%) rotate(-45deg);
+  width: 20px;
+  height: 3px;
+  background-color: black;
+}
+.nav-left:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(-45deg);
+  width: 20px;
+  height: 3px;
+  background-color: black;
+}
+
+.nav-left:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -40%) rotate(45deg);
+  width: 20px;
+  height: 3px;
+  background-color: black;
+}
+
+.nav-left {  
+  left: 0;
+}
+
+.nav-right {
+  right: 0;
 }

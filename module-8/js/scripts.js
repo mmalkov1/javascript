@@ -17,33 +17,71 @@ fullImg.src = galleryItems[0].fullview;
 fullImg.alt = galleryItems[0].alt;
 fullview.append(fullImg);
 //создаем блок уменьшенного изображения
+const previewContainer = document.createElement('div');
+previewContainer.className = `preview-container`;
+gallery.append(previewContainer);
 const preview = document.createElement('ul');
 preview.className = `preview`;
-gallery.append(preview);
+previewContainer.append(preview);
+nav();
+function nav() {
+	const navLeft = document.createElement('div');
+	navLeft.className = `nav-left`;
+	previewContainer.append(navLeft);
+	const navRight = document.createElement('div');
+	navRight.className = `nav-right`;
+	previewContainer.append(navRight);
+	let pos = 0;
+	navLeft.addEventListener('click', function () {
+		let li = document.querySelectorAll('li');
+    let totalLi = li.length;
+    pos = pos - 200;
+    for (let item of li) {
+			item.style = `transform: translateX(${pos}px); transition: transform .2s;`;
+		}
+	})
+	navRight.addEventListener('click', function () {
+		let li = document.querySelectorAll('li');
+    let totalLi = li.length;
+    pos = pos + 200;
+    for (let item of li) {
+			item.style = `transform: translateX(${pos}px); transition: transform .2s;`;
+		}
+	})
+}
+let i = 1;
 for (let item of galleryItems) {
-    let preItem = document.createElement('li');
-    let preImg = document.createElement('img');
-    preItem.append(preImg);
-    preImg.src = item.preview;
-    preImg.dataset.fullview = item.fullview;
-    preImg.alt = item.alt;
-    preview.append(preItem); 
+  let preItem = document.createElement('li');
+  let preImg = document.createElement('img');
+  preItem.append(preImg);
+  preImg.src = item.preview;
+  preImg.dataset.fullview = item.fullview;
+  preImg.dataset.number = i;
+  preImg.alt = item.alt;
+  preview.append(preItem); 
+  i++;
 }
 //меняем фото при клике
 preview.addEventListener('click',function(event){
-    const img = event.target;
-    if (event.target != event.currentTarget) {
-        fullImg.src = img.dataset.fullview;
-        fullImg.alt = img.dataset.alt;
-        const ul = event.currentTarget;
-        const imgList = ul.childNodes;
-        for (let element of imgList) {
-            if (element.children[0].className == 'active') {
-                element.children[0].classList.remove('active');
-            }
-        }
-        img.className = 'active';
+  const img = event.target;
+  if (event.target != event.currentTarget) {
+    fullImg.src = img.dataset.fullview;
+    fullImg.alt = img.dataset.alt;
+    const ul = event.currentTarget;
+    const imgList = ul.childNodes;
+    console.log(event.target);
+    for (let element of imgList) {
+      if (element.children[0].className == 'active') {
+        element.children[0].classList.remove('active');
+      }
     }
+    img.className = 'active';
+    let li = document.querySelectorAll('li');
+    let totalLi = li.length;
+    for (let item of li) {
+    	item.style = `transform: translateX(${(img.dataset.number*-200)+500}px); transition: transform .2s;`;
+    }        
+  }
 })
 
 
