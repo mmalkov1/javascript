@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>module-10</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body class="container">
+	<h1>Домашнее задание №10 (Работа с REST API)</h1>
+  <div class="row form">
+    <input type="text" class="form-control form__search-input col-6">
+    <button class="form__search-btn btn col-2">Поиск</button>
+    <button class="btn btn-primary form__add-btn offset-2 col-2" data-toggle="modal" data-target="#exampleModal">Добавить</button>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="pagination row"></div>
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="info">Пользователь добавлен!</div>
+        <label for="name" class="col-6">Имя</label>
+        <input type="text"  class="col-6 form-control" name="name" id="name">
+        <label for="age" class="col-6">Возраст</label>
+        <input type="text"  class="col-6 form-control" name="age" id="age">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submit" id="save" data-dismiss="modal">Save changes</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <style>
+	h1 {
+		margin-bottom: 2rem;
+	}
+
+  .pagination__page-number {
+    margin: 5px;
+    cursor: pointer;
+  }
+  .info {
+    display: none;
+    color: green;
+    font-weight: 800;
+    transition: all 0.3s;
+  }
+  .show {
+    display: block;
+  }
+  .form {
+    margin-bottom: 2rem;
+  }
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
+	<script src="js/scripts.js"></script>
+</body>
+</html>
