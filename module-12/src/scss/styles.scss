@@ -1,0 +1,80 @@
+/*
+   Import partials below
+*/
+@import 'normalize';
+
+h1 {
+  text-align: center; 
+}
+
+.find {
+  margin: 1rem 0;
+}
+
+.message {
+  align-text: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #80808030;
+  left: 0;
+  top: 0;
+  display: none;
+  font-size: 48px;
+  text-align: center;
+  line-height: 100vh;
+  z-index: 100;
+  transition: all .3s;
+}
+
+
+.show {
+  display: inline-block;
+  transition: all .3s;
+}
+
+.table {
+  a {
+    text-decoration: none;
+    color: #000;
+  }  
+
+  .card {
+    position: relative;
+    cursor: pointer;
+    margin: 0 1rem 2rem;
+
+    .remove {  
+      display: block;  
+      width: 30px;
+      height: 30px;      
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      text-align: center; 
+      line-height: 30px;
+      z-index: 10;
+      font-size: 20px;
+      color: #0006;
+    }    
+  }
+}
+
+.bookmark {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem 0.5rem;
+  
+  h2{
+    margin-bottom: 1rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

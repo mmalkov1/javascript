@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="theme-color" content="#000000">
+  <meta name="copyright" content="Author">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="apple-mobile-web-app-title" content="Application Name">
+  <meta name="msapplication-TileImage" content="images/favicons/144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>module-12</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+  
+  <main class="container">
+    <h1>Домашняя работа №12 (Избанные закладки)</h1>
+    <div class="message">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
+    <div class="find row">
+      <input type="text" class="form-control col-8" id="link">
+      <button class="btn col-2" id="add_btn">Добавить закладку</button>
+    </div>
+    <div class="table row" id="table">
+
+    </div>
+  </main>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    
+      <div class="col-3 card"> 
+        <i class="fas fa-times-circle remove" data-link={{url}}></i>
+        <a href={{url}} target="blank" class="bookmark">    
+          <h4>{{title}}</h4>
+          <img src="{{image}}">
+          <p>{{description}}</p>
+          <p>{{url}}</p>   
+        </a>  
+      </div>
+   
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
