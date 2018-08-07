@@ -11,7 +11,7 @@ window.onload = function () {
   
   function getInfo (opt) {
     document.querySelector('.message').classList.add('show');
-    fetch(`http://api.linkpreview.net/?key=5b65625db87a5f5e988012e8de1972afaae235744bd1d&q=https://${opt}`)
+    fetch(`http://api.linkpreview.net/?key=5b65625db87a5f5e988012e8de1972afaae235744bd1d&q=https://${opt}`, {mode: 'cors'})
     .then((response)=>{
       console.log(response.status);
       if (response.status===200) {
